@@ -67,23 +67,35 @@ Word Requirement (.docx)
 ```
 src/main/java
 │
-├── tcGenerator/ai
-│   └── OllamaClient.java
+├── tcGenerator.ai
+│   ├── OllamaClient.java        # Calls Ollama API
+│   └── OllamaTest.java         # Main runner
 │
-├── tcGenerator/model
-│   ├── TestCase.java
-│   └── FinalResponse.java
+├── tcGenerator.exporter
+│   └── ExcelExporter.java      # Writes Excel output
 │
-├── tcGenerator/util
-│   ├── WordUtil.java
-│   ├── ExcelExporter.java
-│   └── JsonExtractor.java
+├── tcGenerator.generator.output
+│   ├── CERtestcases.xlsx
+│   └── testcases.xlsx         # Generated files
 │
-└── tcGenerator/generator
-    └── OllamaTest.java
+├── tcGenerator.model
+│   ├── FinalResponse.java     # Root AI response
+│   ├── OllamaResponse.java    # Raw Ollama wrapper
+│   └── TestCase.java          # Test Case POJO
+│
+├── tcGenerator.parser
+│   └── RequirementParser.java # Reads requirement text
+│
+└── tcGenerator.util
+    └── FileUtil.java          # File helpers
 
 src/main/resources
-└── requirement/login.docx
+└── requirement
+    ├── login.txt
+    └── NewRequirement.txt     # Input requirements
+
+pom.xml
+
 ```
 
 ---
@@ -121,10 +133,10 @@ cd test-case-generator
 
 ### 3️⃣ Add Requirement
 
-Place your Word file here:
+Place your requirement file here:
 
 ```
-src/main/resources/requirement/login.docx
+src/main/resources/requirement/login.txt
 ```
 
 ---
