@@ -36,7 +36,7 @@ This project is designed as an **SDET portfolio project** demonstrating:
 ## 🏗 Architecture
 
 ```
-Word Requirement (.docx)
+text requirement file (.txt)
         ↓
     Java Reader
         ↓
@@ -203,7 +203,6 @@ Token limits are increased dynamically.
 ## 📌 Future Enhancements
 
 * Auto Selenium Test Generation
-* Cucumber Feature Creation
 * CI Pipeline Integration
 * Test Case Tagging
 * Streaming LLM Responses
@@ -219,12 +218,3 @@ Built by an SDET engineer as a production-quality AI automation portfolio projec
 ⭐ If this project helps you — star the repo!
 
 ---
-
-If you’d like next, we can add:
-
-✅ Selenium generation
-✅ Architecture diagram
-✅ Resume bullets
-✅ Demo screenshots
-
-Just tell me 👍
