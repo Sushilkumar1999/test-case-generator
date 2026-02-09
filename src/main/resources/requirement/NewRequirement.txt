@@ -1,0 +1,260 @@
+Functional Requirements Document
+
+Feature Scope: User Login → Product Selection → Checkout → Order Placement
+
+1. User Authentication (Login Using Username and Password)
+1.1 Purpose
+
+To allow registered users to securely access the application by validating their credentials.
+
+1.2 Login Page Components
+
+The system shall provide a Login Page containing:
+
+Username input field
+
+Password input field (masked characters)
+
+Login button
+
+Optional “Forgot Password” link
+
+Validation message area
+
+1.3 Username Field Requirements
+
+Shall accept alphanumeric characters.
+
+Shall not allow empty submission.
+
+Shall trim leading and trailing spaces automatically.
+
+Shall display an inline validation message if left blank.
+
+Maximum length: configurable (default 50 characters).
+
+1.4 Password Field Requirements
+
+Shall mask entered characters.
+
+Shall not allow empty submission.
+
+Minimum length: configurable (default 8 characters).
+
+Maximum length: configurable (default 32 characters).
+
+Shall support special characters.
+
+Shall display an error if requirements are not met.
+
+1.5 Login Button Behavior
+
+Shall remain disabled until both fields contain input.
+
+On click, shall submit credentials to the authentication service.
+
+Shall display a loading indicator during validation.
+
+1.6 Authentication Validation
+
+The system shall:
+
+Verify username exists.
+
+Match password with stored encrypted password.
+
+Reject invalid credentials with message:
+
+“Invalid username or password.”
+
+Allow a maximum of configurable failed attempts (default: 5).
+
+Lock account temporarily after exceeding attempts.
+
+1.7 Successful Login
+
+On successful authentication:
+
+User session shall be created.
+
+Authentication token shall be stored securely.
+
+User shall be redirected to the Products Page.
+
+User identity shall be maintained throughout navigation.
+
+1.8 Unauthorized Access Handling
+
+Any attempt to access internal pages without login shall redirect to Login Page.
+
+2. Product Listing Page
+2.1 Purpose
+
+To display available products and allow users to add items to their cart.
+
+2.2 Product Display Requirements
+
+Each product shall display:
+
+Product image
+
+Product name
+
+Product description
+
+Unit price
+
+Availability status
+
+“Add to Cart” button
+
+2.3 Product Loading
+
+Products shall be fetched from backend database.
+
+Page shall support pagination or lazy loading.
+
+If products fail to load, system shall show error message.
+
+3. Add Product to Cart
+3.1 Add to Cart Functionality
+
+When user clicks “Add to Cart”:
+
+Selected product shall be added to cart.
+
+Quantity shall default to 1.
+
+Cart icon count shall update immediately.
+
+Confirmation toast/message shall appear.
+
+3.2 Cart Rules
+
+Same product added multiple times shall increase quantity.
+
+User may add multiple different products.
+
+Cart data shall persist during session.
+
+3.3 Cart Contents
+
+Cart shall display:
+
+Product name
+
+Unit price
+
+Quantity selector (+ / –)
+
+Subtotal per item
+
+Remove item option
+
+Total order amount
+
+4. Checkout Page
+4.1 Navigation to Checkout
+
+Checkout button shall be enabled only if cart is not empty.
+
+Clicking Checkout redirects user to Checkout Page.
+
+4.2 Checkout Page Components
+
+Checkout Page shall display:
+
+List of selected products
+
+Quantity per product
+
+Individual price
+
+Subtotals
+
+Grand total
+
+Shipping information form
+
+Place Order button
+
+4.3 Shipping Information
+
+User shall enter:
+
+Full name
+
+Address line 1
+
+Address line 2 (optional)
+
+City
+
+State
+
+Postal code
+
+Phone number
+
+All required fields shall be validated before proceeding.
+
+4.4 Validation Rules
+
+No mandatory field may be empty.
+
+Postal code shall follow country format.
+
+Phone number must be numeric.
+
+Error messages shall appear inline.
+
+5. Place Order
+5.1 Place Order Button
+
+Shall remain disabled until shipping form is valid.
+
+On click, system shall submit order details to backend.
+
+5.2 Order Processing
+
+System shall:
+
+Validate cart items availability.
+
+Calculate final total.
+
+Generate unique Order ID.
+
+Store order in database.
+
+Mark products as reserved/sold.
+
+5.3 Successful Order Placement
+
+Upon success:
+
+Confirmation page shall be displayed.
+
+Order ID shall be shown.
+
+Summary of purchased items shall be visible.
+
+Cart shall be cleared automatically.
+
+5.4 Failure Handling
+
+If order fails:
+
+Error message shall be shown.
+
+Cart shall remain intact.
+
+User may retry submission.
+
+6. Session End
+
+User may log out manually.
+
+Session shall expire automatically after configurable idle time.
+
+After logout, user must re-authenticate.
