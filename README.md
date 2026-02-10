@@ -65,6 +65,15 @@ text requirement file (.txt)
 
 ---
 
+## 📂 Flow Diagram:
+
+<img width="1333" height="177" alt="AI_Test_Case_Generator_flowDiagram" src="https://github.com/user-attachments/assets/22585321-dbad-45d8-81f0-0108c173ed00" />
+
+
+```
+
+---
+
 ## 📂 Project Structure
 
 ```
