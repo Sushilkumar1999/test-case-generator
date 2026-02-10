@@ -26,7 +26,7 @@ public class OllamaClient {
 
             // Build request safely
             Map<String, Object> body = new HashMap<>();
-            body.put("model", "llama3");
+            body.put("model", "qwen2.5:3b");
             body.put("prompt", prompt);
             body.put("stream", false);
             body.put("format", "json");

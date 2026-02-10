@@ -4,7 +4,7 @@
 
 This project is an **AI-powered Test Case Generator** built using **Java**, **Ollama (LLM)**, and **Apache POI**.
 
-It reads software requirements from **Word documents**, sends them to a **local LLM (llama3 via Ollama)**, automatically generates structured **software test cases**, and exports them into an **Excel file**.
+It reads software requirements from **Word documents**, sends them to a **local LLM (qwen2.5:3b via Ollama)**, automatically generates structured **software test cases**, and exports them into an **Excel file**.
 
 The goal is to eliminate manual test case writing and accelerate QA workflows using AI.
 
@@ -54,7 +54,7 @@ text requirement file (.txt)
 ## 🛠 Tech Stack
 
 * Java 8+
-* Ollama (llama3 model)
+* Ollama (qwen2.5:3b model)
 * Jackson (JSON Parsing)
 * Apache POI (Excel)
 * Maven
@@ -111,7 +111,7 @@ Download:
 Pull model:
 
 ```
-ollama pull llama3
+ollama pull qwen2.5:3b
 ```
 
 Ensure service is running:
