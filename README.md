@@ -142,7 +142,7 @@ http://localhost:11434
 ### 2️⃣ Clone Project
 
 ```
-git clone https://github.com/YOUR_USERNAME/test-case-generator.git
+git clone https://github.com/Sushilkumar1999/test-case-generator.git
 cd test-case-generator
 ```
 
